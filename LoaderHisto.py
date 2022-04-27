@@ -8,16 +8,14 @@ import csv
 from datetime import datetime
 from dateutil.parser import *
 
-
-
 # Open Connection with MariaDB
 try:
     conn = mariadb.connect(
-    user="jroco",
-    password="qwerty",
-    host="131.221.33.50",
-    port=3306,
-    database="company"
+    user = os.getenv('DBUSER'),
+    password = os.getenv('DBPASSWORD'),
+    host = os.getenv('DBHOST'),
+    port = int(os.getenv('DBPORT')),
+    database = os.getenv('DBNAME')
     )
 except mariadb.Error as e:
     print(f"Error connecting to MariaDB Platform: {e}")

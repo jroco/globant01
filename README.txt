@@ -9,6 +9,12 @@ yum -y install gcc
 yum -y install python3-devel
 pip3 install mariadb
 
+Previous
+For security reasons is necessary set the following environmental variables to run LoaderHisto.py:
+DBUSER, DBPASSWORD, DBHOST, DBPORT and DBNAME
+
+Develop in Python 3.6
+
 The LoaderHisto.py module take the files jobs.csv, departments.csv and hired_employees.csv
 and load into a local mariadb (credential are public riskly temporarily).
 
