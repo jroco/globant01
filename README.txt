@@ -12,6 +12,8 @@ pip3 install mariadb
 The LoaderHisto.py module take the files jobs.csv, departments.csv and hired_employees.csv
 and load into a local mariadb (credential are public riskly temporarily).
 
+Files with format input error where employee_error.txt, job_error.txt and department_error.txt
+
 The tables created and loaded were company.department, company.job and company.empoyee with foreign key pointing to the dependenies.
 
 CREATE TABLE `job` (
