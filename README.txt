@@ -1,25 +1,35 @@
 Globant Test
 ************
 
-Dependencies for program LoaderHisto.py	
-
+### Dependencies for program LoaderHisto.py	
 yum -y install mariadb-connector-c
 yum -y install mariadb-connector-c-devel
 yum -y install gcc
 yum -y install python3-devel
 pip3 install mariadb
+pip3 install flask
+pip3 install flask_restful
+pip3 install socket
 
-Previous
+### Previous
 For security reasons is necessary set the following environmental variables to run LoaderHisto.py:
 DBUSER, DBPASSWORD, DBHOST, DBPORT and DBNAME
-
 Develop in Python 3.6
 
+### Loading Hisotry Data from csv file:
 The LoaderHisto.py module take the files jobs.csv, departments.csv and hired_employees.csv
 and load into a local mariadb (credential are public riskly temporarily).
 
 Files with format input error where employee_error.txt, job_error.txt and department_error.txt
 
+
+### Loading Data by POST request method
+
+
+
+
+
+#### DATABASE MariaDB ######
 The tables created and loaded were company.department, company.job and company.empoyee with foreign key pointing to the dependenies.
 
 CREATE TABLE `job` (

@@ -4,27 +4,36 @@
 import requests,json,sys,hashlib,os,time,threading,logging,sched
 from flask import Flask, make_response, request
 from flask_restful import Api, Resource, reqparse
-from pymongo import MongoClient
-from pymongo.errors import DuplicateKeyError,ConnectionFailure
 from datetime import datetime
-from requests.exceptions import Timeout
-from urllib3.exceptions import HTTPError as BaseHTTPError
-from bson.json_util import dumps
-import urllib.parse
-import socket
-from influxdb import InfluxDBClient
-import io, PIL.Image as Image
-from requests_toolbelt.multipart.encoder import MultipartEncoder
 import configparser
-import shutil
-import base64
-import boto3
-import re
-import pika
-import pickle
+import socket
 
 api01 = Flask(__name__)
 api = Api(api01)
-scheduler = sched.scheduler(time.time, time.sleep)
+
+#############################
+# Reading Configuration
+#############################
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
+fileconfig = 'api01.conf'
+config = configparser.ConfigParser()
+config.read(fileconfig)
+Api01Version=config.get("global","Api01Version")
+Api01Port=int(config.get("global","Api01Port"))
 
 
+class loader(Resource):
+        def post(self):
+            threadName=threading.current_thread()
+            logging.info('[loader] #################### Initial Messages ####################')
+            logging.info('[loader] [POST] method Reached Thread Number: %s Thread Ident %s',threading.current_thread(),threading.get_ident())
+            return 
+
+
+###################### Main Loop ######################
+if __name__ == '__main__':
+        logging.basicConfig(filename='Api01.log',format='%(asctime)s.%(msecs)03d %(threadName)s %(message)s', datefmt='%Y%m%d %H:%M:%S', level=logging.INFO)
+        logging.info('**** Starting Appliaton API for Globant (V%s) (Info Level)',Api01Version)
+        api.add_resource(loader ,'/loader')
+        api01.run(host=local_ip,port=Api01Port,threaded=True,debug=False)
