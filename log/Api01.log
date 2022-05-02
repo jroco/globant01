@@ -1,0 +1,15 @@
+20220427 17:02:32.586 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220427 17:02:32.590 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220502 10:54:55.551 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220502 10:54:55.556 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220502 10:58:31.384 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220502 10:58:31.387 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220502 11:01:10.419 Thread-1 181.43.212.69 - - [02/May/2022 11:01:10] "[33mPOST /department HTTP/1.1[0m" 404 -
+20220502 11:01:27.878 Thread-2 181.43.212.69 - - [02/May/2022 11:01:27] "[33mPOST / HTTP/1.1[0m" 404 -
+20220502 11:02:07.541 Thread-3 181.43.212.69 - - [02/May/2022 11:02:07] "[33mPOST /loader/ HTTP/1.1[0m" 404 -
+20220502 11:04:34.809 Thread-4 181.43.212.69 - - [02/May/2022 11:04:34] "[33mPOST /loader/ HTTP/1.1[0m" 404 -
+20220502 11:04:57.201 Thread-5 [loader] #################### Initial Messages ####################
+20220502 11:04:57.201 Thread-5 [loader] [POST] method Reached Thread Number: <Thread(Thread-5, started daemon 140318195844864)> Thread Ident 140318195844864
+20220502 11:04:57.202 Thread-5 181.43.212.69 - - [02/May/2022 11:04:57] "POST /loader HTTP/1.1" 200 -
+20220502 14:20:12.986 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220502 14:20:12.990 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
