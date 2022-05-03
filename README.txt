@@ -25,7 +25,20 @@ Files with format input error where employee_error.txt, job_error.txt and depart
 
 ### Loading Data by POST request method
 
+POST Method 
+URL: http://131.221.33.50:5000/loader
+Body raw JSON Data: [{"txnType":"job","id":184,"job":"Cleaning floor and windows"},
+{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},
+{"txnType":"department","id":13,"department":"Cleaning Department"}]
 
+In order to reach 1000, the files must be increased in the body raw JSON Data.
+
+CURL invocation
+curl --location --request POST 'http://131.221.33.50:5000/loader' \
+--header 'Content-Type: application/json' \
+--data-raw '[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},
+{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},
+{"txnType":"department","id":13,"department":"Cleaning Department"}]'
 
 
 
