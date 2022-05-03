@@ -1,15 +1,22 @@
-20220427 17:02:32.586 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
-20220427 17:02:32.590 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
-20220502 10:54:55.551 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
-20220502 10:54:55.556 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
-20220502 10:58:31.384 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
-20220502 10:58:31.387 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
-20220502 11:01:10.419 Thread-1 181.43.212.69 - - [02/May/2022 11:01:10] "[33mPOST /department HTTP/1.1[0m" 404 -
-20220502 11:01:27.878 Thread-2 181.43.212.69 - - [02/May/2022 11:01:27] "[33mPOST / HTTP/1.1[0m" 404 -
-20220502 11:02:07.541 Thread-3 181.43.212.69 - - [02/May/2022 11:02:07] "[33mPOST /loader/ HTTP/1.1[0m" 404 -
-20220502 11:04:34.809 Thread-4 181.43.212.69 - - [02/May/2022 11:04:34] "[33mPOST /loader/ HTTP/1.1[0m" 404 -
-20220502 11:04:57.201 Thread-5 [loader] #################### Initial Messages ####################
-20220502 11:04:57.201 Thread-5 [loader] [POST] method Reached Thread Number: <Thread(Thread-5, started daemon 140318195844864)> Thread Ident 140318195844864
-20220502 11:04:57.202 Thread-5 181.43.212.69 - - [02/May/2022 11:04:57] "POST /loader HTTP/1.1" 200 -
-20220502 14:20:12.986 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
-20220502 14:20:12.990 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:11:11.099 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220503 01:11:11.103 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:11:17.149 Thread-1 [loader] #################### Initial Messages ####################
+20220503 01:11:17.149 Thread-1 [loader] [POST] method Reached Thread Number: <Thread(Thread-1, started daemon 139665521354496)> Thread Ident 139665521354496
+20220503 01:11:17.150 Thread-1 [loader] request data: b'[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},\r\n{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},\r\n{"txnType":"department","id":13,"department":"Cleaning Department"}]'
+20220503 01:11:17.151 Thread-1 [loader] type json01: <class 'list'> size 3
+20220503 01:11:17.151 Thread-1 [loader] record: {'txnType': 'job', 'id': 184, 'job': 'Cleaning floor and windows'}
+20220503 01:11:17.151 Thread-1 [loader] txnType: job id: 184 
+20220503 01:11:17.151 Thread-1 [loader] JOB formatter
+20220503 01:11:17.151 Thread-1 Entering to loadData function with query: INSERT INTO company.job values('184','Cleaning floor and windows')
+20220503 01:11:17.156 Thread-1 [loadData] Count Cursor: 1
+20220503 01:11:17.158 Thread-1 [loader] record: {'txnType': 'employee', 'id': 2000, 'name': 'Juan Ramos', 'datetime': '2022-01-07T13:13:18Z', 'department_id': 3, 'job_id': 3}
+20220503 01:11:17.158 Thread-1 [loader] txnType: employee id: 2000 
+20220503 01:11:17.158 Thread-1 [loader] EMPLOYEE formatter
+20220503 01:11:17.159 Thread-1 Entering to loadData function with query: INSERT INTO company.employee values(null,'Juan Ramos','22-01-07 13:13:18','3','3')
+20220503 01:11:17.160 Thread-1 [loadData] Count Cursor: 1
+20220503 01:11:17.161 Thread-1 [loader] record: {'txnType': 'department', 'id': 13, 'department': 'Cleaning Department'}
+20220503 01:11:17.161 Thread-1 [loader] txnType: department id: 13 
+20220503 01:11:17.162 Thread-1 [loader] DEPARTMENT formatter
+20220503 01:11:17.162 Thread-1 Entering to loadData function with query: INSERT INTO company.department values('13','Cleaning Department')
+20220503 01:11:17.163 Thread-1 [loadData] Count Cursor: 1
+20220503 01:11:17.165 Thread-1 181.43.212.69 - - [03/May/2022 01:11:17] "POST /loader HTTP/1.1" 200 -
