@@ -20,3 +20,281 @@
 20220503 01:11:17.162 Thread-1 Entering to loadData function with query: INSERT INTO company.department values('13','Cleaning Department')
 20220503 01:11:17.163 Thread-1 [loadData] Count Cursor: 1
 20220503 01:11:17.165 Thread-1 181.43.212.69 - - [03/May/2022 01:11:17] "POST /loader HTTP/1.1" 200 -
+20220503 01:17:13.106 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220503 01:17:13.110 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:17:16.423 Thread-1 [loader] #################### Initial Messages ####################
+20220503 01:17:16.424 Thread-1 [loader] [POST] method Reached Thread Number: <Thread(Thread-1, started daemon 139661161248512)> Thread Ident 139661161248512
+20220503 01:17:16.424 Thread-1 [loader] request data: b'[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},\r\n{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},\r\n{"txnType":"department","id":13,"department":"Cleaning Department"}]'
+20220503 01:17:16.425 Thread-1 [loader] type json01: <class 'list'> size 3
+20220503 01:17:16.425 Thread-1 [loader] record: {'txnType': 'job', 'id': 184, 'job': 'Cleaning floor and windows'}
+20220503 01:17:16.425 Thread-1 [loader] txnType: job id: 184 
+20220503 01:17:16.425 Thread-1 [loader] JOB formatter
+20220503 01:17:16.426 Thread-1 Entering to loadData function with query: INSERT INTO company.job values('184','Cleaning floor and windows')
+20220503 01:17:16.430 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '184' for key 'PRIMARY'
+20220503 01:17:16.431 Thread-1 Exception on /loader [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./api01.py", line 129, in post
+    resp = make_response(dataresponse.json())
+AttributeError: 'dict' object has no attribute 'json'
+20220503 01:17:16.435 Thread-1 181.43.212.69 - - [03/May/2022 01:17:16] "[35m[1mPOST /loader HTTP/1.1[0m" 500 -
+20220503 01:18:34.019 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220503 01:18:34.023 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:18:39.101 Thread-1 [loader] #################### Initial Messages ####################
+20220503 01:18:39.102 Thread-1 [loader] [POST] method Reached Thread Number: <Thread(Thread-1, started daemon 140371016898304)> Thread Ident 140371016898304
+20220503 01:18:39.103 Thread-1 [loader] request data: b'[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},\r\n{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},\r\n{"txnType":"department","id":13,"department":"Cleaning Department"}]'
+20220503 01:18:39.103 Thread-1 [loader] type json01: <class 'list'> size 3
+20220503 01:18:39.103 Thread-1 [loader] record: {'txnType': 'job', 'id': 184, 'job': 'Cleaning floor and windows'}
+20220503 01:18:39.104 Thread-1 [loader] txnType: job id: 184 
+20220503 01:18:39.104 Thread-1 [loader] JOB formatter
+20220503 01:18:39.104 Thread-1 Entering to loadData function with query: INSERT INTO company.job values('184','Cleaning floor and windows')
+20220503 01:18:39.108 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '184' for key 'PRIMARY'
+20220503 01:18:39.109 Thread-1 [loader] record: {'txnType': 'employee', 'id': 2000, 'name': 'Juan Ramos', 'datetime': '2022-01-07T13:13:18Z', 'department_id': 3, 'job_id': 3}
+20220503 01:18:39.109 Thread-1 [loader] txnType: employee id: 2000 
+20220503 01:18:39.109 Thread-1 [loader] EMPLOYEE formatter
+20220503 01:18:39.110 Thread-1 Entering to loadData function with query: INSERT INTO company.employee values(null,'Juan Ramos','22-01-07 13:13:18','3','3')
+20220503 01:18:39.111 Thread-1 [loadData] Count Cursor: 1
+20220503 01:18:39.114 Thread-1 [loader] record: {'txnType': 'department', 'id': 13, 'department': 'Cleaning Department'}
+20220503 01:18:39.114 Thread-1 [loader] txnType: department id: 13 
+20220503 01:18:39.114 Thread-1 [loader] DEPARTMENT formatter
+20220503 01:18:39.114 Thread-1 Entering to loadData function with query: INSERT INTO company.department values('13','Cleaning Department')
+20220503 01:18:39.115 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '13' for key 'PRIMARY'
+20220503 01:18:39.116 Thread-1 Exception on /loader [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./api01.py", line 129, in post
+    resp = make_response(dataresponse.json())
+AttributeError: 'dict' object has no attribute 'json'
+20220503 01:18:39.120 Thread-1 181.43.212.69 - - [03/May/2022 01:18:39] "[35m[1mPOST /loader HTTP/1.1[0m" 500 -
+20220503 01:19:30.844 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220503 01:19:30.847 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:19:33.285 Thread-1 [loader] #################### Initial Messages ####################
+20220503 01:19:33.285 Thread-1 [loader] [POST] method Reached Thread Number: <Thread(Thread-1, started daemon 139996043925248)> Thread Ident 139996043925248
+20220503 01:19:33.286 Thread-1 [loader] request data: b'[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},\r\n{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},\r\n{"txnType":"department","id":13,"department":"Cleaning Department"}]'
+20220503 01:19:33.286 Thread-1 [loader] type json01: <class 'list'> size 3
+20220503 01:19:33.286 Thread-1 [loader] record: {'txnType': 'job', 'id': 184, 'job': 'Cleaning floor and windows'}
+20220503 01:19:33.287 Thread-1 [loader] txnType: job id: 184 
+20220503 01:19:33.287 Thread-1 [loader] JOB formatter
+20220503 01:19:33.287 Thread-1 Entering to loadData function with query: INSERT INTO company.job values('184','Cleaning floor and windows')
+20220503 01:19:33.291 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '184' for key 'PRIMARY'
+20220503 01:19:33.292 Thread-1 [loader] record: {'txnType': 'employee', 'id': 2000, 'name': 'Juan Ramos', 'datetime': '2022-01-07T13:13:18Z', 'department_id': 3, 'job_id': 3}
+20220503 01:19:33.292 Thread-1 [loader] txnType: employee id: 2000 
+20220503 01:19:33.292 Thread-1 [loader] EMPLOYEE formatter
+20220503 01:19:33.293 Thread-1 Entering to loadData function with query: INSERT INTO company.employee values(null,'Juan Ramos','22-01-07 13:13:18','3','3')
+20220503 01:19:33.294 Thread-1 [loadData] Count Cursor: 1
+20220503 01:19:33.296 Thread-1 [loader] record: {'txnType': 'department', 'id': 13, 'department': 'Cleaning Department'}
+20220503 01:19:33.296 Thread-1 [loader] txnType: department id: 13 
+20220503 01:19:33.296 Thread-1 [loader] DEPARTMENT formatter
+20220503 01:19:33.296 Thread-1 Entering to loadData function with query: INSERT INTO company.department values('13','Cleaning Department')
+20220503 01:19:33.298 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '13' for key 'PRIMARY'
+20220503 01:19:33.299 Thread-1 181.43.212.69 - - [03/May/2022 01:19:33] "POST /loader HTTP/1.1" 200 -
+20220503 01:21:14.573 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220503 01:21:14.576 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:21:26.433 Thread-1 [loader] #################### Initial Messages ####################
+20220503 01:21:26.433 Thread-1 [loader] [POST] method Reached Thread Number: <Thread(Thread-1, started daemon 139707571009280)> Thread Ident 139707571009280
+20220503 01:21:26.434 Thread-1 [loader] request data: b'[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},\r\n{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},\r\n{"txnType":"department","id":13,"department":"Cleaning Department"}]'
+20220503 01:21:26.435 Thread-1 [loader] type json01: <class 'list'> size 3
+20220503 01:21:26.435 Thread-1 [loader] record: {'txnType': 'job', 'id': 184, 'job': 'Cleaning floor and windows'}
+20220503 01:21:26.435 Thread-1 [loader] txnType: job id: 184 
+20220503 01:21:26.435 Thread-1 [loader] JOB formatter
+20220503 01:21:26.435 Thread-1 Entering to loadData function with query: INSERT INTO company.job values('184','Cleaning floor and windows')
+20220503 01:21:26.440 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '184' for key 'PRIMARY'
+20220503 01:21:26.441 Thread-1 [loader] record: {'txnType': 'employee', 'id': 2000, 'name': 'Juan Ramos', 'datetime': '2022-01-07T13:13:18Z', 'department_id': 3, 'job_id': 3}
+20220503 01:21:26.441 Thread-1 [loader] txnType: employee id: 2000 
+20220503 01:21:26.441 Thread-1 [loader] EMPLOYEE formatter
+20220503 01:21:26.442 Thread-1 Entering to loadData function with query: INSERT INTO company.employee values(null,'Juan Ramos','22-01-07 13:13:18','3','3')
+20220503 01:21:26.443 Thread-1 [loadData] Count Cursor: 1
+20220503 01:21:26.445 Thread-1 [loader] record: {'txnType': 'department', 'id': 13, 'department': 'Cleaning Department'}
+20220503 01:21:26.445 Thread-1 [loader] txnType: department id: 13 
+20220503 01:21:26.445 Thread-1 [loader] DEPARTMENT formatter
+20220503 01:21:26.445 Thread-1 Entering to loadData function with query: INSERT INTO company.department values('13','Cleaning Department')
+20220503 01:21:26.447 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '13' for key 'PRIMARY'
+20220503 01:21:26.447 Thread-1 Exception on /loader [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./api01.py", line 128, in post
+    resp = make_response(dataresponse.json())
+AttributeError: 'dict' object has no attribute 'json'
+20220503 01:21:26.451 Thread-1 181.43.212.69 - - [03/May/2022 01:21:26] "[35m[1mPOST /loader HTTP/1.1[0m" 500 -
+20220503 01:22:39.610 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220503 01:22:39.613 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:22:44.778 Thread-1 [loader] #################### Initial Messages ####################
+20220503 01:22:44.778 Thread-1 [loader] [POST] method Reached Thread Number: <Thread(Thread-1, started daemon 140370987505408)> Thread Ident 140370987505408
+20220503 01:22:44.779 Thread-1 [loader] request data: b'[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},\r\n{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},\r\n{"txnType":"department","id":13,"department":"Cleaning Department"}]'
+20220503 01:22:44.780 Thread-1 [loader] type json01: <class 'list'> size 3
+20220503 01:22:44.780 Thread-1 [loader] record: {'txnType': 'job', 'id': 184, 'job': 'Cleaning floor and windows'}
+20220503 01:22:44.780 Thread-1 [loader] txnType: job id: 184 
+20220503 01:22:44.780 Thread-1 [loader] JOB formatter
+20220503 01:22:44.780 Thread-1 Entering to loadData function with query: INSERT INTO company.job values('184','Cleaning floor and windows')
+20220503 01:22:44.784 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '184' for key 'PRIMARY'
+20220503 01:22:44.784 Thread-1 [loader] record: {'txnType': 'employee', 'id': 2000, 'name': 'Juan Ramos', 'datetime': '2022-01-07T13:13:18Z', 'department_id': 3, 'job_id': 3}
+20220503 01:22:44.785 Thread-1 [loader] txnType: employee id: 2000 
+20220503 01:22:44.785 Thread-1 [loader] EMPLOYEE formatter
+20220503 01:22:44.785 Thread-1 Entering to loadData function with query: INSERT INTO company.employee values(null,'Juan Ramos','22-01-07 13:13:18','3','3')
+20220503 01:22:44.786 Thread-1 [loadData] Count Cursor: 1
+20220503 01:22:44.788 Thread-1 [loader] record: {'txnType': 'department', 'id': 13, 'department': 'Cleaning Department'}
+20220503 01:22:44.789 Thread-1 [loader] txnType: department id: 13 
+20220503 01:22:44.789 Thread-1 [loader] DEPARTMENT formatter
+20220503 01:22:44.789 Thread-1 Entering to loadData function with query: INSERT INTO company.department values('13','Cleaning Department')
+20220503 01:22:44.790 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '13' for key 'PRIMARY'
+20220503 01:22:44.790 Thread-1 Exception on /loader [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./api01.py", line 134, in post
+    resp = make_response(dataresponse.json())
+AttributeError: 'dict' object has no attribute 'json'
+20220503 01:22:44.794 Thread-1 181.43.212.69 - - [03/May/2022 01:22:44] "[35m[1mPOST /loader HTTP/1.1[0m" 500 -
+20220503 01:24:03.067 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220503 01:24:03.071 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:24:18.011 Thread-1 [loader] #################### Initial Messages ####################
+20220503 01:24:18.012 Thread-1 [loader] [POST] method Reached Thread Number: <Thread(Thread-1, started daemon 140321047926528)> Thread Ident 140321047926528
+20220503 01:24:18.013 Thread-1 [loader] request data: b'[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},\r\n{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},\r\n{"txnType":"department","id":13,"department":"Cleaning Department"}]'
+20220503 01:24:18.013 Thread-1 [loader] type json01: <class 'list'> size 3
+20220503 01:24:18.014 Thread-1 [loader] record: {'txnType': 'job', 'id': 184, 'job': 'Cleaning floor and windows'}
+20220503 01:24:18.014 Thread-1 [loader] txnType: job id: 184 
+20220503 01:24:18.014 Thread-1 [loader] JOB formatter
+20220503 01:24:18.014 Thread-1 Entering to loadData function with query: INSERT INTO company.job values('184','Cleaning floor and windows')
+20220503 01:24:18.019 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '184' for key 'PRIMARY'
+20220503 01:24:18.019 Thread-1 [loader] record: {'txnType': 'employee', 'id': 2000, 'name': 'Juan Ramos', 'datetime': '2022-01-07T13:13:18Z', 'department_id': 3, 'job_id': 3}
+20220503 01:24:18.019 Thread-1 [loader] txnType: employee id: 2000 
+20220503 01:24:18.019 Thread-1 [loader] EMPLOYEE formatter
+20220503 01:24:18.020 Thread-1 Entering to loadData function with query: INSERT INTO company.employee values(null,'Juan Ramos','22-01-07 13:13:18','3','3')
+20220503 01:24:18.021 Thread-1 [loadData] Count Cursor: 1
+20220503 01:24:18.024 Thread-1 [loader] record: {'txnType': 'department', 'id': 13, 'department': 'Cleaning Department'}
+20220503 01:24:18.024 Thread-1 [loader] txnType: department id: 13 
+20220503 01:24:18.024 Thread-1 [loader] DEPARTMENT formatter
+20220503 01:24:18.024 Thread-1 Entering to loadData function with query: INSERT INTO company.department values('13','Cleaning Department')
+20220503 01:24:18.025 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '13' for key 'PRIMARY'
+20220503 01:24:18.026 Thread-1 Exception on /loader [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./api01.py", line 134, in post
+    resp = make_response(dataresponse.json())
+AttributeError: 'dict' object has no attribute 'json'
+20220503 01:24:18.030 Thread-1 181.43.212.69 - - [03/May/2022 01:24:18] "[35m[1mPOST /loader HTTP/1.1[0m" 500 -
+20220503 01:24:50.436 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220503 01:24:50.439 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:24:53.099 Thread-1 [loader] #################### Initial Messages ####################
+20220503 01:24:53.099 Thread-1 [loader] [POST] method Reached Thread Number: <Thread(Thread-1, started daemon 140261058377472)> Thread Ident 140261058377472
+20220503 01:24:53.100 Thread-1 [loader] request data: b'[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},\r\n{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},\r\n{"txnType":"department","id":13,"department":"Cleaning Department"}]'
+20220503 01:24:53.101 Thread-1 [loader] type json01: <class 'list'> size 3
+20220503 01:24:53.101 Thread-1 [loader] record: {'txnType': 'job', 'id': 184, 'job': 'Cleaning floor and windows'}
+20220503 01:24:53.101 Thread-1 [loader] txnType: job id: 184 
+20220503 01:24:53.101 Thread-1 [loader] JOB formatter
+20220503 01:24:53.101 Thread-1 Entering to loadData function with query: INSERT INTO company.job values('184','Cleaning floor and windows')
+20220503 01:24:53.106 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '184' for key 'PRIMARY'
+20220503 01:24:53.107 Thread-1 [loader] record: {'txnType': 'employee', 'id': 2000, 'name': 'Juan Ramos', 'datetime': '2022-01-07T13:13:18Z', 'department_id': 3, 'job_id': 3}
+20220503 01:24:53.107 Thread-1 [loader] txnType: employee id: 2000 
+20220503 01:24:53.107 Thread-1 [loader] EMPLOYEE formatter
+20220503 01:24:53.108 Thread-1 Entering to loadData function with query: INSERT INTO company.employee values(null,'Juan Ramos','22-01-07 13:13:18','3','3')
+20220503 01:24:53.109 Thread-1 [loadData] Count Cursor: 1
+20220503 01:24:53.111 Thread-1 [loader] record: {'txnType': 'department', 'id': 13, 'department': 'Cleaning Department'}
+20220503 01:24:53.111 Thread-1 [loader] txnType: department id: 13 
+20220503 01:24:53.111 Thread-1 [loader] DEPARTMENT formatter
+20220503 01:24:53.111 Thread-1 Entering to loadData function with query: INSERT INTO company.department values('13','Cleaning Department')
+20220503 01:24:53.113 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '13' for key 'PRIMARY'
+20220503 01:24:53.114 Thread-1 181.43.212.69 - - [03/May/2022 01:24:53] "POST /loader HTTP/1.1" 200 -
+20220503 01:27:04.125 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220503 01:27:04.128 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:27:08.954 Thread-1 [loader] #################### Initial Messages ####################
+20220503 01:27:08.954 Thread-1 [loader] [POST] method Reached Thread Number: <Thread(Thread-1, started daemon 140499576719104)> Thread Ident 140499576719104
+20220503 01:27:08.954 Thread-1 [loader] request data: b'[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},\r\n{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},\r\n{"txnType":"department","id":13,"department":"Cleaning Department"}]'
+20220503 01:27:08.955 Thread-1 [loader] type json01: <class 'list'> size 3
+20220503 01:27:08.955 Thread-1 [loader] record: {'txnType': 'job', 'id': 184, 'job': 'Cleaning floor and windows'}
+20220503 01:27:08.955 Thread-1 [loader] txnType: job id: 184 
+20220503 01:27:08.955 Thread-1 [loader] JOB formatter
+20220503 01:27:08.956 Thread-1 Entering to loadData function with query: INSERT INTO company.job values('184','Cleaning floor and windows')
+20220503 01:27:08.959 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '184' for key 'PRIMARY'
+20220503 01:27:08.960 Thread-1 [loader] record: {'txnType': 'employee', 'id': 2000, 'name': 'Juan Ramos', 'datetime': '2022-01-07T13:13:18Z', 'department_id': 3, 'job_id': 3}
+20220503 01:27:08.960 Thread-1 [loader] txnType: employee id: 2000 
+20220503 01:27:08.960 Thread-1 [loader] EMPLOYEE formatter
+20220503 01:27:08.961 Thread-1 Entering to loadData function with query: INSERT INTO company.employee values(null,'Juan Ramos','22-01-07 13:13:18','3','3')
+20220503 01:27:08.962 Thread-1 [loadData] Count Cursor: 1
+20220503 01:27:08.964 Thread-1 [loader] record: {'txnType': 'department', 'id': 13, 'department': 'Cleaning Department'}
+20220503 01:27:08.964 Thread-1 [loader] txnType: department id: 13 
+20220503 01:27:08.964 Thread-1 [loader] DEPARTMENT formatter
+20220503 01:27:08.964 Thread-1 Entering to loadData function with query: INSERT INTO company.department values('13','Cleaning Department')
+20220503 01:27:08.965 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '13' for key 'PRIMARY'
+20220503 01:27:08.966 Thread-1 Exception on /loader [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./api01.py", line 129, in post
+    resp = make_response(dataresponse.json())
+AttributeError: 'dict' object has no attribute 'json'
+20220503 01:27:08.970 Thread-1 181.43.212.69 - - [03/May/2022 01:27:08] "[35m[1mPOST /loader HTTP/1.1[0m" 500 -
+20220503 01:28:01.286 MainThread **** Starting Appliaton API for Globant (V0.0.1) (Info Level)
+20220503 01:28:01.290 MainThread  * Running on http://131.221.33.50:5000/ (Press CTRL+C to quit)
+20220503 01:28:05.928 Thread-1 [loader] #################### Initial Messages ####################
+20220503 01:28:05.928 Thread-1 [loader] [POST] method Reached Thread Number: <Thread(Thread-1, started daemon 140154368640768)> Thread Ident 140154368640768
+20220503 01:28:05.929 Thread-1 [loader] request data: b'[{"txnType":"job","id":184,"job":"Cleaning floor and windows"},\r\n{"txnType":"employee","id":2000,"name":"Juan Ramos","datetime":"2022-01-07T13:13:18Z","department_id":3,"job_id":3},\r\n{"txnType":"department","id":13,"department":"Cleaning Department"}]'
+20220503 01:28:05.930 Thread-1 [loader] type json01: <class 'list'> size 3
+20220503 01:28:05.930 Thread-1 [loader] record: {'txnType': 'job', 'id': 184, 'job': 'Cleaning floor and windows'}
+20220503 01:28:05.930 Thread-1 [loader] txnType: job id: 184 
+20220503 01:28:05.930 Thread-1 [loader] JOB formatter
+20220503 01:28:05.930 Thread-1 Entering to loadData function with query: INSERT INTO company.job values('184','Cleaning floor and windows')
+20220503 01:28:05.934 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '184' for key 'PRIMARY'
+20220503 01:28:05.935 Thread-1 [loader] record: {'txnType': 'employee', 'id': 2000, 'name': 'Juan Ramos', 'datetime': '2022-01-07T13:13:18Z', 'department_id': 3, 'job_id': 3}
+20220503 01:28:05.935 Thread-1 [loader] txnType: employee id: 2000 
+20220503 01:28:05.935 Thread-1 [loader] EMPLOYEE formatter
+20220503 01:28:05.936 Thread-1 Entering to loadData function with query: INSERT INTO company.employee values(null,'Juan Ramos','22-01-07 13:13:18','3','3')
+20220503 01:28:05.937 Thread-1 [loadData] Count Cursor: 1
+20220503 01:28:05.939 Thread-1 [loader] record: {'txnType': 'department', 'id': 13, 'department': 'Cleaning Department'}
+20220503 01:28:05.939 Thread-1 [loader] txnType: department id: 13 
+20220503 01:28:05.939 Thread-1 [loader] DEPARTMENT formatter
+20220503 01:28:05.939 Thread-1 Entering to loadData function with query: INSERT INTO company.department values('13','Cleaning Department')
+20220503 01:28:05.941 Thread-1 [loader] [ERROR] Trying to load record to DB: Duplicate entry '13' for key 'PRIMARY'
+20220503 01:28:05.942 Thread-1 181.43.212.69 - - [03/May/2022 01:28:05] "POST /loader HTTP/1.1" 200 -

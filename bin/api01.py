@@ -124,14 +124,17 @@ class loader(Resource):
                         resp = make_response(dataresponse.json())
                         resp.status_code = 400
                         return resp
-            # data format { 'txnType':'employee/job/department', data }
-            # Check conditions (format and number of files)
-            # data format { 'type':'employee/job/department', data }
-            # Insert to database if error log into a batch file
+                dataresponse = {'Response':'Ok'}
+                resp = make_response(dataresponse)
+                resp.status_code = 200
+                return resp
+                # data format { 'txnType':'employee/job/department', data }
+                # Check conditions (format and number of files)
+                # data format { 'type':'employee/job/department', data }
+                # Insert to database if error log into a batch file
             else:
                 logging.info('[loader] No JSON Object detected!')
             return 
-
 
 ###################### Main Loop ######################
 if __name__ == '__main__':
