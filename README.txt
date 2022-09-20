@@ -81,3 +81,4 @@ AUTO_INCREMENT=2000
 ;
 
 #END OF README
+# This is property of www.raicotech.cl all right reserved
